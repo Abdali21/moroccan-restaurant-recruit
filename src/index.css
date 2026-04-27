@@ -38,6 +38,14 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+    /* Brand */
+    --brand: 199 99% 33%;
+    --brand-foreground: 0 0% 100%;
+    --brand-hover: 199 99% 28%;
+
+    --surface: 210 20% 98%;
+    --shadow-soft: 0 10px 40px -12px hsl(var(--brand) / 0.18);
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -101,5 +109,16 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-dot-pattern {
+    background-image: radial-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .mask-fade-center {
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   }
 }
