@@ -111,6 +111,10 @@ export default {
           "0%, 100%": { transform: "translate3d(0, 0, 0)", boxShadow: "0 10px 40px -12px hsl(var(--brand) / 0.5)" },
           "50%": { transform: "translate3d(0, -8px, 0)", boxShadow: "0 22px 50px -14px hsl(var(--brand) / 0.55)" },
         },
+        "marquee": {
+          "0%": { transform: "translate3d(0, 0, 0)" },
+          "100%": { transform: "translate3d(-50%, 0, 0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -120,6 +124,7 @@ export default {
         "cta-pop": "cta-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both",
         "cta-pulse": "cta-pulse 2.2s ease-in-out infinite",
         "cta-bounce": "cta-bounce 2.2s ease-in-out infinite",
+        "marquee": "marquee 60s linear infinite",
       },
     },
   },
