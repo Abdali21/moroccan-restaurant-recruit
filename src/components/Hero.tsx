@@ -69,8 +69,7 @@ const Hero = () => {
             >
               <a
                 href="#publier"
-                className="group relative inline-flex w-full animate-cta-pop items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] [will-change:transform,opacity] transition-all duration-200 hover:bg-brand-hover hover:scale-[1.04] hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 motion-safe:[animation:cta-pop_0.55s_cubic-bezier(0.34,1.56,0.64,1)_both,cta-pulse_2.4s_ease-in-out_1.4s_2] sm:w-auto"
-                style={{ animationDelay: "420ms" }}
+                className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] [will-change:transform,opacity,box-shadow] [transform:translateZ(0)] [backface-visibility:hidden] transition-[background-color,box-shadow] duration-200 hover:bg-brand-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 motion-safe:[animation:cta-pop_0.55s_cubic-bezier(0.34,1.56,0.64,1)_0.42s_both,cta-pulse_2.2s_ease-in-out_1.2s_infinite] sm:w-auto"
               >
                 <span className="sm:hidden">Publier maintenant</span>
                 <span className="hidden sm:inline">Publier votre offre maintenant</span>
