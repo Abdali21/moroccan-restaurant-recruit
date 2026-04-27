@@ -4,7 +4,7 @@ import patternBg from "@/assets/moroccan-pattern.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-surface font-sans animate-fade-in">
+    <section className="relative overflow-hidden bg-surface font-sans animate-hero-rise [will-change:transform,opacity] [transform:translateZ(0)]">
       {/* Moroccan pattern background */}
       <div
         aria-hidden="true"
@@ -47,34 +47,40 @@ const Hero = () => {
           {/* LEFT — copy */}
           <div className="flex flex-col items-start text-center lg:text-left">
             {/* Headline */}
-            <h1 className="w-full animate-fade-in font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            <h1
+              className="w-full animate-fade-rise font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground [will-change:transform,opacity] sm:text-5xl lg:text-6xl"
+              style={{ animationDelay: "120ms" }}
+            >
               Recrutez du personnel{" "}
               <span className="whitespace-nowrap text-brand">fiable</span>, plus vite
             </h1>
 
             {/* Sub-headline */}
             <p
-              className="mt-8 max-w-xl animate-fade-in text-lg leading-relaxed text-muted-foreground sm:mt-6 sm:text-xl"
-              style={{ animationDelay: "120ms", animationFillMode: "backwards" }}
+              className="mt-8 max-w-xl animate-fade-rise text-lg leading-relaxed text-muted-foreground [will-change:transform,opacity] sm:mt-6 sm:text-xl"
+              style={{ animationDelay: "260ms" }}
             >
               Arrêtez le chaos WhatsApp et trouvez des candidats sérieux qui honorent leurs shifts.
             </p>
 
             {/* CTA */}
             <div
-              className="mt-10 flex w-full animate-fade-in flex-col items-center gap-5 sm:mt-8 sm:gap-3 lg:items-start"
-              style={{ animationDelay: "240ms", animationFillMode: "backwards" }}
+              className="mt-10 flex w-full flex-col items-center gap-5 sm:mt-8 sm:gap-3 lg:items-start"
             >
               <a
                 href="#publier"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] transition-all duration-200 hover:bg-brand-hover hover:scale-[1.03] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 sm:w-auto"
+                className="group relative inline-flex w-full animate-cta-pop items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] [will-change:transform,opacity] transition-all duration-200 hover:bg-brand-hover hover:scale-[1.04] hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 motion-safe:[animation:cta-pop_0.55s_cubic-bezier(0.34,1.56,0.64,1)_both,cta-pulse_2.4s_ease-in-out_1.4s_2] sm:w-auto"
+                style={{ animationDelay: "420ms" }}
               >
                 <span className="sm:hidden">Publier maintenant</span>
                 <span className="hidden sm:inline">Publier votre offre maintenant</span>
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
               </a>
 
-              <p className="flex items-center gap-2 text-sm text-muted-foreground">
+              <p
+                className="flex animate-fade-rise items-center gap-2 text-sm text-muted-foreground [will-change:transform,opacity]"
+                style={{ animationDelay: "640ms" }}
+              >
                 <CheckCircle2 className="h-4 w-4 text-brand" />
                 Gratuit pour commencer<span className="hidden sm:inline">&nbsp;•&nbsp;Aucune carte bancaire requise</span>
               </p>
