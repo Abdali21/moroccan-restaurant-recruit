@@ -42,7 +42,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container relative mx-auto px-6 py-12 lg:py-20">
+      <div className="container relative mx-auto px-8 py-12 sm:px-6 lg:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* LEFT — copy */}
           <div className="flex flex-col items-start text-center lg:text-left">
@@ -54,7 +54,7 @@ const Hero = () => {
 
             {/* Sub-headline */}
             <p
-              className="mt-6 max-w-xl animate-fade-in text-lg leading-relaxed text-muted-foreground sm:text-xl"
+              className="mt-8 max-w-xl animate-fade-in text-lg leading-relaxed text-muted-foreground sm:mt-6 sm:text-xl"
               style={{ animationDelay: "120ms", animationFillMode: "backwards" }}
             >
               Arrêtez le chaos WhatsApp et trouvez des candidats sérieux qui honorent leurs shifts.
@@ -62,20 +62,21 @@ const Hero = () => {
 
             {/* CTA */}
             <div
-              className="mt-8 flex w-full animate-fade-in flex-col items-center gap-3 lg:items-start"
+              className="mt-10 flex w-full animate-fade-in flex-col items-center gap-5 sm:mt-8 sm:gap-3 lg:items-start"
               style={{ animationDelay: "240ms", animationFillMode: "backwards" }}
             >
               <a
                 href="#publier"
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] transition-all duration-200 hover:bg-brand-hover hover:scale-[1.03] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 sm:w-auto"
               >
-                Publier votre offre maintenant
+                <span className="sm:hidden">Publier maintenant</span>
+                <span className="hidden sm:inline">Publier votre offre maintenant</span>
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
               </a>
 
               <p className="flex items-center gap-2 text-sm text-muted-foreground">
                 <CheckCircle2 className="h-4 w-4 text-brand" />
-                Gratuit pour commencer&nbsp;•&nbsp;Aucune carte bancaire requise
+                Gratuit pour commencer<span className="hidden sm:inline">&nbsp;•&nbsp;Aucune carte bancaire requise</span>
               </p>
             </div>
           </div>
