@@ -104,8 +104,8 @@ export default {
           "100%": { opacity: "1", transform: "translate3d(0, 0, 0) scale(1)" },
         },
         "cta-pulse": {
-          "0%, 100%": { transform: "scale(1)", boxShadow: "0 10px 40px -12px hsl(var(--brand) / 0.5)" },
-          "50%": { transform: "scale(1.025)", boxShadow: "0 18px 50px -12px hsl(var(--brand) / 0.65)" },
+          "0%, 100%": { transform: "translate3d(0,0,0) scale(1)", boxShadow: "0 10px 40px -12px hsl(var(--brand) / 0.5)" },
+          "50%": { transform: "translate3d(0,0,0) scale(1.035)", boxShadow: "0 18px 50px -12px hsl(var(--brand) / 0.65)" },
         },
       },
       animation: {
@@ -114,7 +114,7 @@ export default {
         "hero-rise": "hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
         "fade-rise": "fade-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
         "cta-pop": "cta-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both",
-        "cta-pulse": "cta-pulse 2.4s ease-in-out 1.2s 2",
+        "cta-pulse": "cta-pulse 2.2s ease-in-out infinite",
       },
     },
   },
