@@ -49,24 +49,7 @@ const Hero = () => {
             {/* Headline */}
             <h1 className="w-full animate-fade-in font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Recrutez du personnel{" "}
-              <span className="relative whitespace-nowrap text-brand">
-                fiable
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 200 12"
-                  className="absolute -bottom-2 left-0 h-2 w-full text-brand/40"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M2 8 Q 50 2, 100 6 T 198 5"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>{" "}
-              qui se présente vraiment
+              <span className="whitespace-nowrap text-brand">fiable</span>, plus vite
             </h1>
 
             {/* Sub-headline */}
