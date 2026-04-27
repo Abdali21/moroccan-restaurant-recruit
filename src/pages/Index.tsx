@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import SocialProof from "@/components/SocialProof";
 import Process from "@/components/Process";
+import Benefits from "@/components/Benefits";
 
 const Index = () => {
   return (
@@ -8,6 +9,7 @@ const Index = () => {
       <Hero />
       <SocialProof />
       <Process />
+      <Benefits />
     </main>
   );
 };
