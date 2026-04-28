@@ -49,7 +49,7 @@ const Process = () => {
           <span className="inline-flex items-center rounded-full border border-brand/20 bg-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand">
             Simple • Rapide • Efficace
           </span>
-          <h2 className="mt-6 font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 font-display text-2xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-3xl lg:text-5xl">
             L'embauche en{" "}
             <span className="whitespace-nowrap font-extrabold text-[#046A9A]">
               48h

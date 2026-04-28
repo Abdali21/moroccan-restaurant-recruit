@@ -10,10 +10,10 @@ const FinalCTA = () => {
     >
       <div className="container relative mx-auto px-6 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <h2 className="font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-2xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-3xl lg:text-5xl">
             Trouvez votre{" "}
             <span className="whitespace-nowrap font-extrabold text-[#046A9A]">
-              prochain talent
+            talent
             </span>{" "}
             ici
           </h2>

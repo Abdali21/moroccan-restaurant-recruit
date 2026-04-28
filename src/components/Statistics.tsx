@@ -57,7 +57,7 @@ const AnimatedCounter = ({ value, suffix, shouldAnimate }: CounterProps) => {
   }, [count, shouldAnimate, value]);
 
   return (
-    <p className="mt-5 font-display text-5xl font-bold leading-none tracking-tight text-[#0170A7] sm:text-6xl">
+    <p className="mt-5 font-display text-[42px] font-bold leading-none tracking-tight text-[#0170A7] sm:text-5xl lg:text-6xl">
       <motion.span>{displayValue}</motion.span>
       <span>{suffix}</span>
     </p>
@@ -95,14 +95,14 @@ const Statistics = () => {
           <span className="inline-flex items-center rounded-full border border-[#0170A7]/20 bg-[#0170A7]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#0170A7]">
             COINCARRIÈRE EN CHIFFRES
           </span>
-          <h2 className="mt-6 font-display text-3xl font-bold leading-[1.12] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 font-display text-2xl font-bold leading-[1.12] tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
             <span className="font-extrabold text-[#046A9A]">Résultats</span>{" "}
             réels
-            </h2>
+          </h2>
         </div>
 
         <motion.div
-          className="mt-12 grid grid-cols-1 gap-6 sm:gap-7 lg:mt-14 lg:grid-cols-3 lg:gap-8"
+          className="mt-12 grid grid-cols-1 gap-5 sm:gap-6 lg:mt-14 lg:grid-cols-3 lg:gap-8"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -113,7 +113,7 @@ const Statistics = () => {
             return (
               <article
                 key={`${stat.value}-${stat.suffix}`}
-                className="group rounded-2xl border border-border/70 bg-background/90 px-7 py-8 text-center shadow-[0_18px_45px_-24px_hsl(var(--foreground)/0.2)] backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-[1.03] [transform:translateZ(0)]"
+                className="group rounded-2xl border border-border/70 bg-background/90 px-6 py-7 text-center shadow-[0_18px_45px_-24px_hsl(var(--foreground)/0.2)] backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-[1.03] [transform:translateZ(0)] sm:px-7 sm:py-8"
               >
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#0170A7]/10 ring-1 ring-[#0170A7]/20 transition-colors duration-300 group-hover:bg-[#0170A7]/15">
                   <Icon className="h-7 w-7 text-[#0170A7]" aria-hidden="true" />

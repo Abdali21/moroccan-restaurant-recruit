@@ -59,9 +59,14 @@ const SocialProof = () => {
           <span className="inline-flex items-center rounded-full border border-brand/20 bg-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand">
             ILS NOUS FONT CONFIANCE
           </span>
-          <h2 className="mt-6 font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            +500 Restaurants &amp; Hôtels
-          </h2>
+
+<h2 className="mt-6 font-display text-2xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
+  <span className="font-extrabold" style={{ color: "#076A98" }}>
+    +500
+  </span>{" "}
+  Restaurants &amp; Hôtels
+</h2>
+
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
             Nous font confiance pour recruter du personnel fiable
           </p>
@@ -77,7 +82,7 @@ const SocialProof = () => {
               "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
           }}
         >
-          <div className="flex w-max animate-marquee gap-4 sm:gap-6 [will-change:transform] [transform:translateZ(0)] group-hover:[animation-play-state:paused]">
+          <div className="flex w-max animate-marquee [animation-direction:reverse] gap-4 sm:gap-6 [will-change:transform] [transform:translateZ(0)] group-hover:[animation-play-state:paused]">
             {[...LOGOS, ...LOGOS].map((company, i) => (
               <div
                 key={`${company.name}-${i}`}
@@ -94,10 +99,12 @@ const SocialProof = () => {
         </div>
 
         {/* Testimonials Section */}
-        <div className="mt-16">
-          <h3 className="mb-8 text-center font-display text-2xl font-semibold text-foreground">
-            Ce qu’ils disent de nous
-          </h3>
+        <div className="mt-24 sm:mt-28">
+          <div className="mb-8 flex justify-center">
+            <span className="inline-flex items-center rounded-full border border-brand/20 bg-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand">
+              Ce qu’ils disent de nous
+            </span>
+          </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {TESTIMONIALS.map((testimonial, index) => (
