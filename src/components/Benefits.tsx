@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
-import patternBg from "@/assets/moroccan-pattern.jpg";
 
 type Benefit = {
   title: string;
