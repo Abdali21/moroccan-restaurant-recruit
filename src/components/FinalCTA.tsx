@@ -25,11 +25,6 @@ const FinalCTA = () => {
   href="https://coincarriere.com/register?type=company"
   target="_blank"
   rel="noopener noreferrer"
-  onClick={() => {
-    if (window.fbq) {
-      window.fbq('track', 'Lead');
-    }
-  }}
   className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0170A7] px-8 py-5 text-base font-semibold text-white shadow-[0_14px_45px_-14px_rgba(1,112,167,0.62)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-[#016491] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0170A7]/35 sm:mt-11 sm:w-auto sm:min-w-[23rem] sm:px-12 sm:py-5 sm:text-lg [will-change:transform,box-shadow] [transform:translateZ(0)]"
   animate={{ y: [0, -6, 0] }}
   transition={{ duration: 2.4, ease: "easeInOut", repeat: Infinity }}

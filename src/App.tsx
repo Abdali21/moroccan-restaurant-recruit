@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import MetaPixel from "./components/MetaPixel";   // ← ADD THIS LINE
 
 const queryClient = new QueryClient();
 
@@ -14,11 +13,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      
-      {/* ADD META PIXEL HERE */}
-      <MetaPixel pixelId="1741963450515274" />
-
-      <BrowserRouter>
+            <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="*" element={<NotFound />} />

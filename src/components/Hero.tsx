@@ -43,12 +43,7 @@ const Hero = () => {
 
         <a
          href="https://coincarriere.com/register?type=company"
-             onClick={() => {
-             if (window.fbq) {
-            window.fbq('track', 'Lead');
-        }
-        }}
-     className="hidden lg:inline-flex items-center justify-center rounded-xl bg-[#0170A7] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_-14px_rgba(1,112,167,0.65)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#016491] hover:shadow-[0_14px_32px_-14px_rgba(1,112,167,0.72)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0170A7]/35"
+       className="hidden lg:inline-flex items-center justify-center rounded-xl bg-[#0170A7] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_-14px_rgba(1,112,167,0.65)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#016491] hover:shadow-[0_14px_32px_-14px_rgba(1,112,167,0.72)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0170A7]/35"
 >
   Publier maintenant
 </a>
@@ -83,11 +78,6 @@ const Hero = () => {
   href="https://coincarriere.com/register?type=company"
   target="_blank"
   rel="noopener noreferrer"
-  onClick={() => {
-    if (window.fbq) {
-      window.fbq('track', 'Lead');
-    }
-  }}
   className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] [will-change:transform,box-shadow] [transform:translateZ(0)] [backface-visibility:hidden] transition-[background-color,box-shadow] duration-200 hover:bg-brand-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 sm:w-auto"
   animate={{ y: [0, -5, 0] }}
   transition={{ 

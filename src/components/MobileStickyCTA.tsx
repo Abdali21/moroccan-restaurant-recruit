@@ -64,11 +64,6 @@ const MobileStickyCTA = ({
               {/* Main Button */}
               <a
                 href={ctaHref}
-                onClick={() => {
-                  if (window.fbq) {
-                    window.fbq('track', 'Lead');
-                  }
-                }}
                 className="flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl bg-[#0170A7] px-8 text-[15px] font-semibold text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40 active:scale-[0.985]"
               >
                 {ctaText}
