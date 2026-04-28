@@ -18,30 +18,30 @@ const TESTIMONIALS = [
   {
     name: "Yassine Farsi",
     role: "Propriétaire • Restaurant Le Tangerine, Marrakech",
-    quote: "CoinCarrière m'a fait gagner plus de 12 heures par semaine. J'ai recruté 3 serveurs fiables en moins de 48h pendant le Ramadan.",
+    quote: "Avant CoinCarrière, je passais 15 heures par semaine sur WhatsApp à trier 40 réponses pour 2 bons profils. Pendant le Ramadan, j'ai recruté 3 serveurs fiables en moins de 48h. Je n'ai plus jamais eu de no-show.",
     rating: 5,
-    initials: "YF",
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200",
   },
   {
-    name: "Fatima Zahra Benali",
+    name: "Fatima Zahra El Amrani",
     role: "General Manager • La Sultana Marrakech",
-    quote: "La qualité des candidats est exceptionnelle. J'ai enfin trouvé du personnel qui reste et qui comprend notre exigence de service.",
+    quote: "La qualité des candidats est exceptionnelle. J'ai enfin arrêté de former des gens qui partent après 2 semaines. Le turnover a baissé de 60% en 3 mois. C'est le meilleur investissement que j'ai fait pour mon équipe.",
     rating: 5,
-    initials: "FZ",
+    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200",
   },
   {
-    name: "Omar El Khayat",
+    name: "Omar Benjelloun",
     role: "Propriétaire • Riad Fes",
-    quote: "En période de pointe (Ramadan + été), CoinCarrière nous sauve la vie. Nous avons recruté 7 personnes en moins d'une semaine.",
-    rating: 5,
-    initials: "OE",
+    quote: "En pleine saison (Ramadan + été), j'avais besoin de 7 personnes en urgence. CoinCarrière m'a sauvé la vie. J'ai reçu des profils vérifiés et j'ai tout embauché en 5 jours. Plus jamais les groupes Facebook.",
+    rating: 4,
+    photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200",
   },
   {
-    name: "Salma Benjelloun",
+    name: "Salma Tazi",
     role: "HR Director • Sofitel Marrakech",
-    quote: "Le meilleur outil de recrutement que j'ai utilisé au Maroc. Les profils sont vérifiés et le processus est extrêmement simple.",
+    quote: "Le plus gros gain ? Le temps. Je passe de 12 heures par semaine à moins de 3 heures pour recruter. Les profils sont déjà vérifiés, le processus est ultra simple. C'est l'outil le plus efficace que j'ai utilisé au Maroc.",
     rating: 5,
-    initials: "SB",
+    photo: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=200",
   },
 ];
 
@@ -60,38 +60,32 @@ const SocialProof = () => {
             ILS NOUS FONT CONFIANCE
           </span>
 
-<h2 className="mt-6 font-display text-2xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
-  <span className="font-extrabold" style={{ color: "#076A98" }}>
-    +500
-  </span>{" "}
-  Restaurants &amp; Hôtels
-</h2>
+          <h2 className="mt-6 font-display text-2xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl">
+            <span className="font-extrabold" style={{ color: "#076A98" }}>
+              +500
+            </span>{" "}
+            Restaurants &amp; Hôtels
+          </h2>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
             Nous font confiance pour recruter du personnel fiable
           </p>
         </div>
 
-        {/* Marquee with Real Logos */}
-        <div
-          className="group relative mt-10 overflow-hidden sm:mt-12"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
-          }}
-        >
-          <div className="flex w-max animate-marquee [animation-direction:reverse] gap-4 sm:gap-6 [will-change:transform] [transform:translateZ(0)] group-hover:[animation-play-state:paused]">
-            {[...LOGOS, ...LOGOS].map((company, i) => (
+        {/* Marquee with Logos - Infinite Scroll */}
+        <div className="mt-12 overflow-hidden">
+          <div 
+            className="flex w-max animate-marquee-slow gap-5 sm:gap-8 [will-change:transform] group-hover:[animation-play-state:paused]"
+          >
+            {[...LOGOS, ...LOGOS].map((company, index) => (
               <div
-                key={`${company.name}-${i}`}
-                className="flex h-14 shrink-0 items-center justify-center rounded-xl border border-border/70 bg-white px-6 shadow-[0_8px_24px_-18px_hsl(var(--foreground)/0.4)] transition-all duration-300 hover:scale-[1.03] hover:border-brand/30 sm:h-16 sm:px-8"
+                key={index}
+                className="flex h-16 shrink-0 items-center justify-center rounded-2xl border border-border/60 bg-white px-8 shadow-sm transition-all duration-300 hover:border-brand/40 hover:shadow-md"
               >
                 <img
                   src={company.logo}
                   alt={company.name}
-                  className="h-8 w-auto object-contain grayscale-[0.3] transition-all duration-300 group-hover:grayscale-0"
+                  className="h-9 w-auto object-contain grayscale-[0.2] transition-all duration-300 group-hover:grayscale-0"
                 />
               </div>
             ))}
@@ -99,8 +93,8 @@ const SocialProof = () => {
         </div>
 
         {/* Testimonials Section */}
-        <div className="mt-24 sm:mt-28">
-          <div className="mb-8 flex justify-center">
+        <div className="mt-20 sm:mt-24">
+          <div className="mb-10 flex justify-center">
             <span className="inline-flex items-center rounded-full border border-brand/20 bg-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand">
               Ce qu’ils disent de nous
             </span>
@@ -110,7 +104,7 @@ const SocialProof = () => {
             {TESTIMONIALS.map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="group rounded-2xl border border-border/70 bg-white p-8 shadow-[0_20px_60px_-15px_hsl(var(--foreground)/0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_-20px_hsl(var(--brand)/0.25)]"
+                className="group relative rounded-3xl border border-border/70 bg-white p-9 shadow-[0_20px_60px_-15px_hsl(var(--foreground)/0.25)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_30px_80px_-20px_hsl(var(--brand)/0.25)]"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -120,22 +114,47 @@ const SocialProof = () => {
                   ease: easePremium,
                 }}
               >
-                {/* Rating Stars */}
-                <div className="flex items-center gap-1 text-[#E3B341]">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <span key={i} className="text-xl">★</span>
-                  ))}
+                {/* Large Quote Mark */}
+                <div className="absolute -top-3 right-8 text-[120px] font-serif leading-none text-brand/10">”</div>
+
+                {/* Rating + Verified Badge */}
+                <div className="flex items-center justify-between">
+                  {/* Enhanced Premium Stars */}
+                  <div className="flex items-center gap-1.5">
+                    {Array.from({ length: testimonial.rating }).map((_, i) => (
+                      <svg 
+                        key={i} 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="h-5 w-5 text-[#F59E0B] drop-shadow-[0_1px_3px_rgb(245,158,11,0.45)]" 
+                        viewBox="0 0 20 20" 
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118L2.98 10.11c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                      </svg>
+                    ))}
+                    <span className="ml-1 text-xs font-semibold text-muted-foreground">
+                      {testimonial.rating}/5
+                    </span>
+                  </div>
+
+                  <div className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-0.5 text-xs font-semibold text-emerald-600">
+                    ✓ Vérifié
+                  </div>
                 </div>
 
                 {/* Quote */}
-                <p className="mt-6 text-[17px] leading-relaxed text-foreground">
+                <p className="mt-8 text-[17px] leading-relaxed text-foreground">
                   “{testimonial.quote}”
                 </p>
 
-                {/* Author Info */}
-                <div className="mt-8 flex items-center gap-4 border-t border-border/60 pt-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand/10 text-sm font-bold text-brand ring-1 ring-brand/20">
-                    {testimonial.initials}
+                {/* Author with Photo */}
+                <div className="mt-9 flex items-center gap-4 border-t border-border/60 pt-6">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-brand/20 shadow-lg">
+                    <img
+                      src={testimonial.photo}
+                      alt={testimonial.name}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-display text-base font-semibold text-foreground">

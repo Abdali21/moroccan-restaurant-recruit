@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -91,29 +96,53 @@ export default {
           },
         },
         "hero-rise": {
-          "0%": { opacity: "0", transform: "translate3d(0, 24px, 0) scale(0.985)" },
+          "0%": {
+            opacity: "0",
+            transform: "translate3d(0, 24px, 0) scale(0.985)",
+          },
           "100%": { opacity: "1", transform: "translate3d(0, 0, 0) scale(1)" },
         },
         "fade-rise": {
-          "0%": { opacity: "0", transform: "translate3d(0, 18px, 0) scale(0.97)" },
+          "0%": {
+            opacity: "0",
+            transform: "translate3d(0, 18px, 0) scale(0.97)",
+          },
           "100%": { opacity: "1", transform: "translate3d(0, 0, 0) scale(1)" },
         },
         "cta-pop": {
-          "0%": { opacity: "0", transform: "translate3d(0, 14px, 0) scale(0.92)" },
-          "60%": { opacity: "1", transform: "translate3d(0, -2px, 0) scale(1.04)" },
+          "0%": {
+            opacity: "0",
+            transform: "translate3d(0, 14px, 0) scale(0.92)",
+          },
+          "60%": {
+            opacity: "1",
+            transform: "translate3d(0, -2px, 0) scale(1.04)",
+          },
           "100%": { opacity: "1", transform: "translate3d(0, 0, 0) scale(1)" },
         },
         "cta-pulse": {
-          "0%, 100%": { transform: "translate3d(0,0,0) scale(1)", boxShadow: "0 10px 40px -12px hsl(var(--brand) / 0.5)" },
-          "50%": { transform: "translate3d(0,0,0) scale(1.035)", boxShadow: "0 18px 50px -12px hsl(var(--brand) / 0.65)" },
+          "0%, 100%": {
+            transform: "translate3d(0,0,0) scale(1)",
+            boxShadow: "0 10px 40px -12px hsl(var(--brand) / 0.5)",
+          },
+          "50%": {
+            transform: "translate3d(0,0,0) scale(1.035)",
+            boxShadow: "0 18px 50px -12px hsl(var(--brand) / 0.65)",
+          },
         },
         "cta-bounce": {
-          "0%, 100%": { transform: "translate3d(0, 0, 0)", boxShadow: "0 10px 40px -12px hsl(var(--brand) / 0.5)" },
-          "50%": { transform: "translate3d(0, -8px, 0)", boxShadow: "0 22px 50px -14px hsl(var(--brand) / 0.55)" },
+          "0%, 100%": {
+            transform: "translate3d(0, 0, 0)",
+            boxShadow: "0 10px 40px -12px hsl(var(--brand) / 0.5)",
+          },
+          "50%": {
+            transform: "translate3d(0, -8px, 0)",
+            boxShadow: "0 22px 50px -14px hsl(var(--brand) / 0.55)",
+          },
         },
-        "marquee": {
-          "0%": { transform: "translate3d(0, 0, 0)" },
-          "100%": { transform: "translate3d(-50%, 0, 0)" },
+        marquee: {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
         },
       },
       animation: {
@@ -124,7 +153,8 @@ export default {
         "cta-pop": "cta-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both",
         "cta-pulse": "cta-pulse 2.2s ease-in-out infinite",
         "cta-bounce": "cta-bounce 2.2s ease-in-out infinite",
-        "marquee": "marquee 60s linear infinite",
+        marquee: "marquee 60s linear infinite",
+        "marquee-slow": "marquee 40s linear infinite", // ← Added this line
       },
     },
   },
