@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    fbq: any;
+    fbq?: (command: string, ...args: unknown[]) => void;
   }
 }
 
@@ -13,12 +12,18 @@ interface MetaPixelProps {
 
 export default function MetaPixel({ pixelId }: MetaPixelProps) {
   useEffect(() => {
-    if (!pixelId) return;
+    if (!pixelId || typeof window === 'undefined') return;
+
+    // If fbq already exists, just re-init
+    if (window.fbq) {
+      window.fbq('init', pixelId);
+      window.fbq('track', 'PageView');
+      return;
+    }
 
     const script = document.createElement('script');
     script.src = 'https://connect.facebook.net/en_US/fbevents.js';
     script.async = true;
-    document.head.appendChild(script);
 
     script.onload = () => {
       if (window.fbq) {
@@ -27,11 +32,7 @@ export default function MetaPixel({ pixelId }: MetaPixelProps) {
       }
     };
 
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
+    document.head.appendChild(script);
   }, [pixelId]);
 
   return null;
