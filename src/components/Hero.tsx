@@ -74,10 +74,16 @@ const Hero = () => {
               className="mt-10 flex w-full flex-col items-center gap-5 sm:mt-8 sm:gap-3 lg:items-start"
             >
               <motion.a
-                href="#publier"
+                href="https://coincarriere.com/register?type=company"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] [will-change:transform,box-shadow] [transform:translateZ(0)] [backface-visibility:hidden] transition-[background-color,box-shadow] duration-200 hover:bg-brand-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 sm:w-auto"
                 animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 2.2, ease: "easeInOut", repeat: Infinity }}
+                transition={{ 
+                  duration: 3.8,
+                  ease: "easeInOut", 
+                  repeat: Infinity 
+                }}
                 whileHover={{ y: -2 }}
               >
                 <span className="sm:hidden">Publier maintenant</span>
