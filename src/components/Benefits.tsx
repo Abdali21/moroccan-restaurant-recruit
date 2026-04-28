@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
+import patternBg from "@/assets/moroccan-pattern.jpg";
 
 type Benefit = {
   title: string;
@@ -44,7 +45,7 @@ const BENEFITS: Benefit[] = [
   {
     title: "Réduisez le turnover",
     description:
-      "Meilleure adéquation = moins de départs et de formations inutiles. Économisez du temps et de l'argent.",
+      "Meilleure adéquation = moins de départs et de formations inutiles. Économisez du temps et du argent.",
     Icon: HeartHandshake,
   },
   {
@@ -90,9 +91,9 @@ const Benefits = () => {
             Pourquoi les restaurateurs choisissent CoinCarrière
           </span>
           <h2 className="mt-6 font-display text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-          Nos{" "}
+            Nos{" "}
             <span className="whitespace-nowrap font-extrabold text-[#046A9A]">
-            Avantages
+              Avantages
             </span>
           </h2>
         </div>

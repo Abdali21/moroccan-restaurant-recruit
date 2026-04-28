@@ -6,9 +6,10 @@ import Benefits from "@/components/Benefits";
 import FinalCTA from "@/components/FinalCTA";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
 
+
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background pb-24 sm:pb-0">
+    <main className="min-h-screen bg-background">
       <Hero />
       <SocialProof />
       <Process />
