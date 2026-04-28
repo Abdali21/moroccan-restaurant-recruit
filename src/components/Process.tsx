@@ -26,43 +26,23 @@ const STEPS = [
 
 const easePremium: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
-const stepsVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
-    },
-  },
-};
-
-const stepVariants = {
-  hidden: { opacity: 0, y: 24, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6, ease: easePremium },
-  },
-};
-
 const Process = () => {
   return (
     <ScrollReveal
       aria-label="Notre processus"
-      className="relative overflow-hidden bg-background font-sans [will-change:transform,opacity] [transform:translateZ(0)]"
+      className="relative overflow-hidden bg-background font-sans"
     >
+      {/* Background Image + Light Overlay */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/background.jpg')",
-        }}
+        style={{ backgroundImage: "url('/images/background.jpg')" }}
       />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-white/80"
       />
+
       <div className="container relative mx-auto px-6 py-16 sm:py-24">
         {/* Header */}
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -83,60 +63,43 @@ const Process = () => {
 
         {/* Steps */}
         <div className="relative mt-14 sm:mt-20">
-          {/* Animated connecting line — desktop only */}
-          <motion.svg
-            aria-hidden="true"
-            className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-8 hidden h-4 w-auto md:block"
-            viewBox="0 0 100 16"
-            preserveAspectRatio="none"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <path
-              d="M 2 8 L 98 8"
-              fill="none"
-              stroke="#0170A7"
-              strokeWidth="1.2"
-              strokeOpacity="0.18"
-              strokeLinecap="round"
-            />
-            <motion.path
-              d="M 2 8 L 98 8"
-              fill="none"
-              stroke="#0170A7"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              style={{ filter: "drop-shadow(0 0 6px rgba(1,112,167,0.45))" }}
-              variants={{
-                hidden: { pathLength: 0, opacity: 0.35 },
-                visible: {
-                  pathLength: 1,
-                  opacity: 1,
-                  transition: { duration: 1.35, ease: [0.25, 0.1, 0.25, 1] },
-                },
-              }}
-            />
-          </motion.svg>
+          {/* Animated Connecting Line - Desktop Only */}
+          <div className="absolute left-1/2 top-8 hidden h-[3px] w-[72%] -translate-x-1/2 md:block">
+            <div className="relative h-full w-full">
+              {/* Background Line (lighter) */}
+              <div className="absolute inset-0 bg-[#0170A7]/15 rounded-full" />
+
+              {/* Animated Progress Line (thicker + slower) */}
+              <motion.div
+                className="absolute inset-0 origin-left bg-[#0170A7] rounded-full"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ 
+                  duration: 4.4,           // ← Slower (was 1.4)
+                  ease: easePremium 
+                }}
+              />
+            </div>
+          </div>
 
           <motion.ol
             className="relative grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-6"
-            variants={stepsVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            {STEPS.map((step) => (
+            {STEPS.map((step, index) => (
               <motion.li
                 key={step.number}
-                variants={stepVariants}
-                className="group relative flex flex-col items-center text-center transition-transform duration-300 ease-out hover:scale-[1.04] [will-change:transform,opacity] [transform:translateZ(0)]"
+                className="group relative flex flex-col items-center text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                {/* Number circle */}
-                <div
-                  className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-brand font-display text-2xl font-bold text-brand-foreground ring-4 ring-background transition-shadow duration-300 group-hover:shadow-[0_18px_40px_-12px_hsl(var(--brand)/0.55)]"
-                  style={{ boxShadow: "var(--shadow-soft)" }}
-                >
+                {/* Number Circle */}
+                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-brand font-display text-2xl font-bold text-brand-foreground ring-4 ring-background transition-all duration-300 group-hover:shadow-[0_18px_40px_-12px_hsl(var(--brand)/0.55)]">
                   {step.number}
                 </div>
 
