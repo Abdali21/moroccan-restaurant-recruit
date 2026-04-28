@@ -42,11 +42,11 @@ const Hero = () => {
         {/* Desktop-only top-right CTA */}
 
         <a
-         href="https://coincarriere.com/register?type=company"
-       className="hidden lg:inline-flex items-center justify-center rounded-xl bg-[#0170A7] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_-14px_rgba(1,112,167,0.65)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#016491] hover:shadow-[0_14px_32px_-14px_rgba(1,112,167,0.72)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0170A7]/35"
->
-  Publier maintenant
-</a>
+          href="https://coincarriere.com/register?type=company"
+          className="hidden lg:inline-flex items-center justify-center rounded-xl bg-[#0170A7] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_-14px_rgba(1,112,167,0.65)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#016491] hover:shadow-[0_14px_32px_-14px_rgba(1,112,167,0.72)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0170A7]/35"
+        >
+          Publier maintenant
+        </a>
       </div>
 
       <div className="container relative mx-auto px-8 py-12 sm:px-6 lg:py-20">
@@ -74,23 +74,23 @@ const Hero = () => {
             <div
               className="mt-10 flex w-full flex-col items-center gap-5 sm:mt-8 sm:gap-3 lg:items-start"
             >
-  <motion.a
-  href="https://coincarriere.com/register?type=company"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] [will-change:transform,box-shadow] [transform:translateZ(0)] [backface-visibility:hidden] transition-[background-color,box-shadow] duration-200 hover:bg-brand-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 sm:w-auto"
-  animate={{ y: [0, -5, 0] }}
-  transition={{ 
-    duration: 3.8,
-    ease: "easeInOut", 
-    repeat: Infinity 
-  }}
-  whileHover={{ y: -2 }}
->
-  <span className="sm:hidden">Publier maintenant</span>
-  <span className="hidden sm:inline">Publier votre offre maintenant</span>
-  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
-</motion.a>
+              <motion.a
+                href="https://coincarriere.com/register?type=company"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-[0_10px_40px_-12px_hsl(var(--brand)/0.5)] [will-change:transform,box-shadow] [transform:translateZ(0)] [backface-visibility:hidden] transition-[background-color,box-shadow] duration-200 hover:bg-brand-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30 sm:w-auto"
+                animate={{ y: [0, -5, 0] }}
+                transition={{
+                  duration: 3.8,
+                  ease: "easeInOut",
+                  repeat: Infinity
+                }}
+                whileHover={{ y: -2 }}
+              >
+                <span className="sm:hidden">Publier maintenant</span>
+                <span className="hidden sm:inline">Publier votre offre maintenant</span>
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+              </motion.a>
 
               <p
                 className="flex animate-fade-rise items-center gap-2 text-sm text-muted-foreground [will-change:transform,opacity]"
