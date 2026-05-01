@@ -29,6 +29,7 @@ const easePremium: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 const Process = () => {
   return (
     <ScrollReveal
+      id="notre-processus"
       aria-label="Notre processus"
       className="relative overflow-hidden bg-background font-sans"
     >

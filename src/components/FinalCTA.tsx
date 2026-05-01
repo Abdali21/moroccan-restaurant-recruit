@@ -5,6 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 const FinalCTA = () => {
   return (
     <ScrollReveal
+      id="commencer-maintenant"
       aria-label="Appel a l'action final"
       className="relative overflow-hidden bg-background font-sans [will-change:transform,opacity] [transform:translateZ(0)]"
     >

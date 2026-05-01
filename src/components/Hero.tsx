@@ -1,11 +1,67 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-restaurant.jpg";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const Hero = () => {
+  const fullHeadline = "Recrutez du personnel fiable, plus vite";
+  const emphasizedWord = "fiable";
+  const emphasizedWordStart = fullHeadline.indexOf(emphasizedWord);
+
+  const [typedHeadline, setTypedHeadline] = useState("");
+  const [typingPhase, setTypingPhase] = useState<"typing" | "pausing" | "deleting">("typing");
+
+  useEffect(() => {
+    const typingDelayMs = 135;
+    const deletingDelayMs = 80;
+    const fullPauseMs = 2500;
+
+    const timeoutId = window.setTimeout(() => {
+      if (typingPhase === "typing") {
+        if (typedHeadline.length < fullHeadline.length) {
+          setTypedHeadline(fullHeadline.slice(0, typedHeadline.length + 1));
+          return;
+        }
+        setTypingPhase("pausing");
+        return;
+      }
+
+      if (typingPhase === "pausing") {
+        setTypingPhase("deleting");
+        return;
+      }
+
+      if (typedHeadline.length > 0) {
+        setTypedHeadline(fullHeadline.slice(0, typedHeadline.length - 1));
+        return;
+      }
+
+      setTypingPhase("typing");
+    }, typingPhase === "pausing" ? fullPauseMs : typingPhase === "typing" ? typingDelayMs : deletingDelayMs);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [typedHeadline, typingPhase, fullHeadline]);
+
+  const prefix =
+    emphasizedWordStart >= 0
+      ? typedHeadline.slice(0, Math.min(typedHeadline.length, emphasizedWordStart))
+      : typedHeadline;
+  const typedEmphasizedLength =
+    emphasizedWordStart >= 0
+      ? Math.min(Math.max(typedHeadline.length - emphasizedWordStart, 0), emphasizedWord.length)
+      : 0;
+  const typedEmphasizedWord = emphasizedWord.slice(0, typedEmphasizedLength);
+  const suffix =
+    emphasizedWordStart >= 0
+      ? typedHeadline.slice(emphasizedWordStart + typedEmphasizedLength)
+      : "";
+
   return (
-    <ScrollReveal className="relative overflow-hidden bg-background font-sans [will-change:transform,opacity] [transform:translateZ(0)]">
+    <ScrollReveal
+      id="hero"
+      className="relative overflow-hidden bg-background font-sans [will-change:transform,opacity] [transform:translateZ(0)]"
+    >
       {/* Hero background image */}
       <div
         aria-hidden="true"
@@ -26,40 +82,39 @@ const Hero = () => {
         className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand/10 blur-3xl"
       />
 
-      {/* Top row */}
-      <div className="container relative mx-auto flex items-center justify-between px-6 pt-8 sm:pt-10">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-4 py-1.5 text-xs font-medium text-foreground/80 shadow-sm backdrop-blur sm:text-sm">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-          </span>
-          <span className="hidden sm:inline">
-            Première plateforme de recrutement hôtellerie-resto&nbsp;•&nbsp;#1 au Maroc
-          </span>
-          <span className="sm:hidden">#1 hôtellerie-resto au Maroc</span>
-        </div>
-
-        {/* Desktop-only top-right CTA */}
-
-        <a
-          href="https://coincarriere.com/register?type=company"
-          className="hidden lg:inline-flex items-center justify-center rounded-xl bg-[#0170A7] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_-14px_rgba(1,112,167,0.65)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 hover:bg-[#016491] hover:shadow-[0_14px_32px_-14px_rgba(1,112,167,0.72)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0170A7]/35"
-        >
-          Publier maintenant
-        </a>
-      </div>
-
-      <div className="container relative mx-auto px-8 py-12 sm:px-6 lg:py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="container relative mx-auto px-8 py-16 sm:px-6 lg:py-24">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           {/* LEFT — copy */}
           <div className="flex flex-col items-start text-center lg:text-left">
             {/* Headline */}
             <h1
-              className="w-full animate-fade-rise font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground [will-change:transform,opacity] sm:text-5xl lg:text-6xl"
+              className="w-full animate-fade-rise font-display text-4xl font-extrabold leading-[1.08] tracking-[-0.015em] text-foreground [will-change:transform,opacity] sm:text-5xl lg:text-6xl"
               style={{ animationDelay: "120ms" }}
             >
-              Recrutez du personnel{" "}
-              <span className="whitespace-nowrap text-brand">fiable</span>, plus vite
+              <span>{prefix}</span>
+              {typedEmphasizedWord && (
+                <span className="whitespace-nowrap text-brand [text-shadow:0_0_12px_rgba(1,112,167,0.28)]">
+                  {typedEmphasizedWord}
+                </span>
+              )}
+              <span>{suffix}</span>
+              <motion.span
+                aria-hidden="true"
+                className="ml-1 inline-block h-[0.94em] w-[3px] rounded-full align-[-0.08em] bg-[#0170A7]"
+                animate={{
+                  opacity: [1, 0.2, 1],
+                  boxShadow: [
+                    "0 0 0 rgba(1,112,167,0.0)",
+                    "0 0 14px rgba(1,112,167,0.55)",
+                    "0 0 0 rgba(1,112,167,0.0)",
+                  ],
+                }}
+                transition={{
+                  duration: 1.35,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                }}
+              />
             </h1>
 
             {/* Sub-headline */}

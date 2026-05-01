@@ -70,6 +70,7 @@ const Statistics = () => {
 
   return (
     <motion.section
+      id="resultats"
       ref={sectionRef}
       aria-label="Statistiques CoinCarrière"
       className="relative overflow-hidden bg-surface font-sans [will-change:transform,opacity] [transform:translateZ(0)]"

@@ -80,6 +80,7 @@ const cardVariants = {
 const Benefits = () => {
   return (
     <ScrollReveal
+      id="nos-avantages"
       aria-label="Nos avantages"
       className="relative overflow-hidden bg-background font-sans [will-change:transform,opacity] [transform:translateZ(0)]"
     >

@@ -2,16 +2,15 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
 
 const LOGOS = [
-  { name: "La Mamounia", logo: "/images/logos/la-mamounia.png" },
-  { name: "Royal Mansour Marrakech", logo: "/images/logos/royal-mansour.png" },
-  { name: "Four Seasons Resort Marrakech", logo: "/images/logos/four-seasons.png" },
-  { name: "Sofitel Marrakech", logo: "/images/logos/sofitel.png" },
-  { name: "Hilton Tangier", logo: "/images/logos/hilton.png" },
-  { name: "Marriott Rabat", logo: "/images/logos/marriott.png" },
-  { name: "Riad Fes", logo: "/images/logos/riad-fes.webp" },
-  { name: "Kasbah Tamadot", logo: "/images/logos/kasbah-tamadot.png" },
-  { name: "Dar Ahlam", logo: "/images/logos/dar-ahlam.png" },
-  { name: "La Grande Brasserie", logo: "/images/logos/la-grande-brasserie.png" },
+  { name: "La Mamounia", logo: "/images/logos/la-mamounia.webp" },
+  { name: "Royal Mansour Marrakech", logo: "/images/logos/royal-mansour.webp" },
+  { name: "Four Seasons Resort Marrakech", logo: "/images/logos/four-seasons.webp" },
+  { name: "Sofitel Marrakech", logo: "/images/logos/sofitel.webp" },
+  { name: "Hilton Tangier", logo: "/images/logos/hilton.webp" },
+  { name: "Marriott Rabat", logo: "/images/logos/marriott.webp" },
+  { name: "Kasbah Tamadot", logo: "/images/logos/kasbah-tamadot.webp" },
+  { name: "Dar Ahlam", logo: "/images/logos/dar-ahlam.webp" },
+  { name: "La Grande Brasserie", logo: "/images/logos/la-grande-brasserie.webp" },
 ];
 
 const TESTIMONIALS = [
@@ -50,6 +49,7 @@ const easePremium: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 const SocialProof = () => {
   return (
     <ScrollReveal
+      id="ils-nous-font-confiance"
       aria-label="Ils nous font confiance"
       className="relative overflow-hidden bg-background font-sans"
     >
@@ -72,22 +72,29 @@ const SocialProof = () => {
           </p>
         </div>
 
-        {/* Marquee with Logos - Infinite Scroll */}
+        {/* Premium Marquee with Logos */}
         <div className="mt-12 overflow-hidden">
           <div 
             className="flex w-max animate-marquee-slow gap-5 sm:gap-8 [will-change:transform] group-hover:[animation-play-state:paused]"
           >
             {[...LOGOS, ...LOGOS].map((company, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex h-16 shrink-0 items-center justify-center rounded-2xl border border-border/60 bg-white px-8 shadow-sm transition-all duration-300 hover:border-brand/40 hover:shadow-md"
+                className="group flex h-16 shrink-0 items-center justify-center rounded-2xl border border-border/60 bg-white px-8 shadow-sm transition-all duration-300"
+                whileHover={{
+                  scale: 1.08,
+                  y: -4,
+                  boxShadow: "0 20px 50px -12px rgba(1, 112, 167, 0.25)",
+                  borderColor: "#0170A7",
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               >
                 <img
                   src={company.logo}
                   alt={company.name}
-                  className="h-9 w-auto object-contain grayscale-[0.2] transition-all duration-300 group-hover:grayscale-0"
+                  className="h-9 w-auto object-contain grayscale-[0.35] transition-all duration-500 group-hover:grayscale-0"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -119,7 +126,6 @@ const SocialProof = () => {
 
                 {/* Rating + Verified Badge */}
                 <div className="flex items-center justify-between">
-                  {/* Enhanced Premium Stars */}
                   <div className="flex items-center gap-1.5">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
                       <svg 
@@ -142,12 +148,10 @@ const SocialProof = () => {
                   </div>
                 </div>
 
-                {/* Quote */}
                 <p className="mt-8 text-[17px] leading-relaxed text-foreground">
                   “{testimonial.quote}”
                 </p>
 
-                {/* Author with Photo */}
                 <div className="mt-9 flex items-center gap-4 border-t border-border/60 pt-6">
                   <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-brand/20 shadow-lg">
                     <img

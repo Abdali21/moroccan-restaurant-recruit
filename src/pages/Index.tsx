@@ -5,11 +5,13 @@ import Process from "@/components/Process";
 import Benefits from "@/components/Benefits";
 import FinalCTA from "@/components/FinalCTA";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
+import Header from "@/components/Header";
 
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen scroll-smooth bg-background">
+      <Header />
       <Hero />
       <SocialProof />
       <Process />
